@@ -1,0 +1,12 @@
+az group create --name rerg --location "East US"
+az group deployment create --name refunccosmosdeploy --resource-group rerg --template-file azuredeploy.json --parameters @azuredeploy.parameters.json
+
+
+az group deployment create \
+  --name ExampleDeployment \
+  --resource-group ExampleGroup \
+  --template-file storage.json \
+  --parameters @storage.parameters.json
+
+
+  az group deployment create --name refunccosmosdeploy --resource-group rerg --template-file azuredeploy.json --parameters azuredeploy.parameters.json --mode Incremental --verbose --rollback-on-error --debug

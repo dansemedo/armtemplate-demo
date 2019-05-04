@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "funcName": {
+            "value": "refuncdemo"
+        },
+        "storageName": {
+            "value": "refuncdemobd90"
+        },
+        "hostingPlanName": {
+            "value": "reappplan"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "location": {
+            "value": "East US"
+        },
+        "sku": {
+            "value": "Standard"
+        },
+        "workerSize": {
+            "value": "5"
+        },
+        "scaleNumber": {
+            "value": "1"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rerg"
+        },
+        "skuCode": {
+            "value": "S2"
+        },
+        "subscriptionId": {
+            "value": "37f2058f-24a9-427c-88e9-3421e199d7ed"
+        },
+        "cosmosName": {
+            "value": "cosmosdbfunc"
+        },
+        "defaultExperience": {
+            "value": "Core (SQL)"
+        },
+        "cosmosNestedTemplateName": {
+            "value": "C://Project//armtemplate-demo//cosmosdbfunc.json"
+        }
+       
+    }
+}
