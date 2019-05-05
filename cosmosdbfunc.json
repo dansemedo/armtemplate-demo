@@ -43,5 +43,10 @@
             }
         }
     ],
-    "outputs": {}
+    "outputs": {
+        "greetingMessage": {
+            "value": "Hello Daniel World",
+            "type" : "string"
+        }
+    }
 }

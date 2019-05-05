@@ -139,6 +139,12 @@
             "type": "string"
         }
     },
+    "outputs": {
+        "messageFromNestedTemplate": {
+            "type": "string",
+            "value": "[reference('nestedTemplate').outputs.greetingMessage.value]"
+        }
+    },
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0"
 }
