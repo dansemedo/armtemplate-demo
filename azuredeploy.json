@@ -23,7 +23,14 @@
                         {
                             "name": "WEBSITE_NODE_DEFAULT_VERSION",
                             "value": "10.14.1"
+                        },
+                        {
+                            "name": "COSMOSDB_CONN",
+                            "value": "[reference('nestedTemplate').outputs.connectionString.value]"
+                          
                         }
+                        
+                        
                     ],
                     "alwaysOn": true
                 },
@@ -33,7 +40,8 @@
             },
             "dependsOn": [
                 "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]",
+                "nestedTemplate"
             ],
             "location": "[parameters('location')]",
             "kind": "functionapp"
@@ -137,14 +145,12 @@
         },
         "cosmosNestedTemplateName": {
             "type": "string"
+        },
+        "connectionString": {
+            "type": "string"
         }
     },
-    "outputs": {
-        "messageFromNestedTemplate": {
-            "type": "string",
-            "value": "[reference('nestedTemplate').outputs.greetingMessage.value]"
-        }
-    },
+
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0"
 }

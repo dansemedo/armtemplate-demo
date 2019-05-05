@@ -15,7 +15,13 @@
             "type": "string"
         }
     },
-    "variables": {},
+    "variables": {
+        "cosmosDbAccount": {
+          "name": "[parameters('name')]"
+        },
+        "resourceId": "[resourceId('Microsoft.DocumentDB/databaseAccounts', variables('cosmosDbAccount').name)]",
+        "apiVersion": "[providers('Microsoft.DocumentDB', 'databaseAccounts').apiVersions[0]]"
+      },
     "resources": [
         {
             "apiVersion": "2015-04-08",
@@ -44,6 +50,18 @@
         }
     ],
     "outputs": {
+        "documentEndpoint": {
+            "type": "string",
+            "value": "[reference(variables('resourceId'), variables('apiVersion')).documentEndpoint]"
+          },
+          "accountKey": {
+            "type": "string",
+            "value": "[listKeys(variables('resourceId'), variables('apiVersion')).primaryMasterKey]"
+          },
+          "connectionString": {
+            "type": "string",
+            "value": "[concat('AccountEndpoint=https://', variables('cosmosDbAccount').name, '.documents.azure.com:443/;AccountKey=', listKeys(variables('resourceId'), variables('apiVersion')).primaryMasterKey, ';')]"
+          },
         "greetingMessage": {
             "value": "Hello Daniel World",
             "type" : "string"
