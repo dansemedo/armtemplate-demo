@@ -15,7 +15,7 @@
             "value": ""
         },
         "location": {
-            "value": "East US"
+            "value": "eastus"
         },
         "sku": {
             "value": "Standard"
@@ -35,15 +35,17 @@
         "subscriptionId": {
             "value": "37f2058f-24a9-427c-88e9-3421e199d7ed"
         },
-        "cosmosName": {
+        "locationName": {
+            "value": "East US"
+        },
+        "name": {
             "value": "cosmosdbfunc"
         },
         "defaultExperience": {
             "value": "Core (SQL)"
         },
         "cosmosNestedTemplateName": {
-            "value": "C://Project//armtemplate-demo//cosmosdbfunc.json"
-        }
-       
+            "value": "https://raw.githubusercontent.com/dansemedo/armtemplate-demo/dansemedo/devtest/cosmosdbfunc.json"
+        }      
     }
 }

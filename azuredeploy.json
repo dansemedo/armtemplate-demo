@@ -73,14 +73,17 @@
                 "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
-                    "cosmosName": {
-                        "value": "[parameters('cosmosName')]"
-                    },
                     "location": {
                         "value": "[parameters('location')]"
                     },
                     "defaultExperience": {
                         "value": "[parameters('defaultExperience')]"
+                    },
+                    "name": {
+                        "value": "[parameters('name')]"
+                    },
+                    "locationName": {
+                        "value": "[parameters('locationName')]"
                     }
 
                 }
@@ -123,7 +126,10 @@
         "subscriptionId": {
             "type": "string"
         },
-        "cosmosName": {
+        "name": {
+            "type": "string"
+        },
+        "locationName": {
             "type": "string"
         },
         "defaultExperience": {
